@@ -245,7 +245,24 @@ int main() {
         printf(ANSI_COLOR_RED "FAIL" ANSI_COLOR_RESET "\n");
     }
 
+    clear(calculadora);
     free(calculadora);
 
     return 0;
 }
+
+// int main() {
+//     char loop = 's';
+//     Pilha * calculadora = (Pilha *) malloc(sizeof(Pilha));
+   
+//    do {
+//        printf("Resultado: %f\n", calcular(calculadora)->num);
+//        printf("Seguir calculando? (s/n) ");
+//        scanf("%c", &loop);
+//        clear(calculadora);
+//    } while (loop != 'n');
+
+//    free(calculadora);
+
+//     return 0;
+// }

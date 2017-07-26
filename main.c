@@ -6,7 +6,7 @@
 int main() {
     Pilha * calculadora = (Pilha *) malloc(sizeof(Pilha));
    
-    printf("Resultado: %f\n", calcular(calculadora));
+    printf("Resultado: %f\n", calcular(calculadora)->num);
 
     return 0;
 }
