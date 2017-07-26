@@ -30,7 +30,9 @@ typedef struct Pilha Pilha;
 
 // Retorna 1 se a pilha estiver vazia, 0 caso contrario
 int isEmpty(Pilha * pilha) {
-    // IMPLEMENTAR AQUI
+    if (pilha->topo)
+        return 0;
+    return 1;
 }
 
 // Insere elemento no topo da pilha
@@ -44,7 +46,11 @@ void push(Pilha * pilha, float elemento) {
 
 // Remove elemento do topo da pilha, se a pilha nao estiver vazia
 void pop(Pilha * pilha) {
-    // IMPLEMENTAR AQUI
+    if (!isEmpty(pilha)) {
+        Nodo * remover = pilha->topo;
+        pilha->topo = remover->prox;
+        free(remover);   
+    }
 }
 
 // Retorna valor do topo da pilha, se a pilha nao estiver vazia
@@ -78,7 +84,12 @@ int divisorValido(Pilha * calculadora) {
 // Soma os dois valores no topo da pilha e armazena o resultado no topo da pilha
 void soma(Pilha * calculadora) {
     if (temArgumentos(calculadora)) {
-        // IMPLEMENTAR AQUI
+        float op1, op2;
+        op2 = top(calculadora)->num;
+        pop(calculadora);
+        op1 = top(calculadora)->num;        
+        pop(calculadora);
+        push(calculadora, op1 + op2);
     }
 }
 
@@ -110,7 +121,12 @@ void multiplicacao(Pilha * calculadora) {
 void divisao(Pilha * calculadora) {
     if (temArgumentos(calculadora)) {
         if (divisorValido(calculadora)) {
-            // IMPLEMENTAR AQUI
+            float op1, op2;
+            op2 = top(calculadora)->num;
+            pop(calculadora);
+            op1 = top(calculadora)->num;        
+            pop(calculadora);
+            push(calculadora, op1 / op2);
         }
     }
 }

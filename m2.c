@@ -37,11 +37,7 @@ int isEmpty(Pilha * pilha) {
 
 // Insere elemento no topo da pilha
 void push(Pilha * pilha, float elemento) {
-    Nodo * novo = (Nodo*) malloc(sizeof(Nodo));
-    novo->num = elemento;
-    
-    novo->prox = pilha->topo;
-    pilha->topo = novo;
+    // IMPLEMENTAR AQUI
 }
 
 // Remove elemento do topo da pilha, se a pilha nao estiver vazia
@@ -55,9 +51,7 @@ void pop(Pilha * pilha) {
 
 // Retorna valor do topo da pilha, se a pilha nao estiver vazia
 Nodo * top(Pilha * pilha) {
-    if (isEmpty(pilha))
-        return NULL;
-    return pilha->topo;
+    // IMPLEMENTAR AQUI
 }
 
 // Remove todos os elementos da pilha
@@ -96,24 +90,14 @@ void soma(Pilha * calculadora) {
 // Subtrai os dois valores no topo da pilha e armazena o resultado no topo da pilha
 void subtracao(Pilha * calculadora) {
     if (temArgumentos(calculadora)) {
-        float op1, op2;
-        op2 = top(calculadora)->num;
-        pop(calculadora);
-        op1 = top(calculadora)->num;        
-        pop(calculadora);
-        push(calculadora, op1 - op2);
+        // IMPLEMENTAR AQUI
     }
 }
 
 // Multiplica os dois valores no topo da pilha e armazena o resultado no topo da pilha
 void multiplicacao(Pilha * calculadora) {
     if (temArgumentos(calculadora)) {
-        float op1, op2;
-        op2 = top(calculadora)->num;
-        pop(calculadora);
-        op1 = top(calculadora)->num;        
-        pop(calculadora);
-        push(calculadora, op1 * op2);
+        // IMPLEMENTAR AQUI
     }
 }
 
@@ -265,20 +249,3 @@ int main() {
 
     return 0;
 }
-
-// int main () {
-//     char loop = 's';
-//     Pilha * calculadora = (Pilha *) malloc(sizeof(Pilha));
-
-//     do {
-//         printf("Resultado: %f\n", calcular(calculadora));
-//         printf("Seguir calculando? (s/n) ");
-//         scanf("%c", &loop);
-//     } while (loop == 's');
-
-//     free(calc);
-
-//     //testar();
-
-//     return 0;
-// }r
